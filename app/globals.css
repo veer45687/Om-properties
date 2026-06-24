@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --gold:#d7a83f; --emerald:#0f6b53; color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family: var(--font-inter), Inter, system-ui, sans-serif; background:#070706; color:#fff; }
+::selection { background: rgba(215,168,63,.45); }
+.glass { background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04)); border:1px solid rgba(255,255,255,.14); box-shadow: 0 24px 80px rgba(0,0,0,.35); backdrop-filter: blur(18px); }
+.gold-text { background: linear-gradient(90deg,#fff4c7,#d7a83f,#8b691f); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.light body, body.light { background:#fbf8ef; color:#17140c; }
+.light .dark-panel { background: rgba(255,255,255,.82); color:#17140c; border-color: rgba(139,105,31,.18); }
+@keyframes shimmer { from { transform: translateX(-120%);} to { transform: translateX(120%);} }
+.loader-shimmer:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent); animation:shimmer 1.4s infinite; }
