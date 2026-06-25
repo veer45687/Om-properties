@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Footer } from '@/components/layout/footer';
 import { FloatingActions } from '@/components/layout/floating-actions';
 import { Header } from '@/components/layout/header';
+import { ExperienceShell } from '@/components/layout/experience-shell';
 import './globals.css';
 
 
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-IN" suppressHydrationWarning><body><Header />{children}<Footer /><FloatingActions /></body></html>;
+  return <html lang="en-IN" suppressHydrationWarning><body><ExperienceShell><Header />{children}<Footer /><FloatingActions /></ExperienceShell></body></html>;
 }
