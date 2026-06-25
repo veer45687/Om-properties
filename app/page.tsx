@@ -13,7 +13,6 @@ const locations = ['Kaithal', 'Jind', 'Ambala Road', 'Sector 20', 'Pehowa Chowk'
 const blogs = ['2026 Haryana property trends', 'How to verify a plot before registry', 'Best corridors for rental ROI'];
 
 export default function HomePage() {
-  const featured = properties.filter((property) => property.featured).slice(0, 3);
   const jsonLd = { '@context': 'https://schema.org', '@type': 'RealEstateAgent', name: company.name, telephone: company.phone, email: company.email, address: company.address, areaServed: company.serviceArea };
   return <main className="overflow-hidden">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
