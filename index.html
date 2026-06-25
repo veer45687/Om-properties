@@ -3,250 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Om Properties | Kaithal & Jind Real Estate</title>
-  <meta name="description" content="Om Properties - Kaithal, Jind aur nearby Haryana areas mein verified plots, homes, commercial spaces, agricultural land aur rentals." />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #fff;
-      background: #07110f;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(5, 17, 15, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: flex; flex-direction: column; font-weight: 800; letter-spacing: .04em; }
-    .brand small { color: #f3c969; font-weight: 600; letter-spacing: normal; }
-    .menu { display: flex; flex-wrap: wrap; gap: 18px; color: rgba(255,255,255,.78); font-size: 15px; }
-    .menu a:hover { color: #f3c969; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(243,201,105,.5);
-      background: linear-gradient(135deg, #f7d37a, #b98522);
-      color: #111;
-      font-weight: 800;
-      box-shadow: 0 12px 35px rgba(185,133,34,.25);
-    }
-    .btn.secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.25); box-shadow: none; }
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.48), rgba(0,0,0,.84)),
-        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85') center/cover;
-      padding: 80px 0;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; align-items: end; }
-    .badge { display: inline-block; border: 1px solid rgba(243,201,105,.35); color: #f7d37a; border-radius: 999px; padding: 8px 14px; background: rgba(255,255,255,.08); }
-    h1 { margin-top: 22px; font-size: clamp(42px, 7vw, 82px); line-height: .98; letter-spacing: -.05em; }
-    .gold { color: #f7d37a; }
-    .lead { margin-top: 24px; max-width: 720px; color: rgba(255,255,255,.78); font-size: clamp(18px, 2.2vw, 23px); }
-    .actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
-    .panel {
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 28px;
-      background: rgba(8, 18, 16, .78);
-      box-shadow: 0 30px 90px rgba(0,0,0,.32);
-      padding: 24px;
-    }
-    .quick-form { display: grid; gap: 12px; }
-    label { color: rgba(255,255,255,.72); font-size: 13px; }
-    input, select, textarea {
-      width: 100%;
-      margin-top: 7px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 16px;
-      background: rgba(0,0,0,.32);
-      color: #fff;
-      padding: 14px 15px;
-      outline: none;
-    }
-    select option { color: #111; }
-    section { padding: 82px 0; }
-    .section-title { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin-bottom: 14px; }
-    .muted { color: rgba(255,255,255,.68); }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: center; }
-    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 34px; }
-    .card { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.045); border-radius: 24px; padding: 22px; }
-    .card h3 { color: #f7d37a; margin-bottom: 8px; }
-    .properties { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
-    .property { overflow: hidden; padding: 0; }
-    .property img { width: 100%; height: 220px; object-fit: cover; }
-    .property-body { padding: 20px; }
-    .tag { display: inline-block; margin-bottom: 10px; border-radius: 999px; padding: 5px 10px; background: rgba(243,201,105,.14); color: #f7d37a; font-size: 12px; font-weight: 700; }
-    .price { margin-top: 12px; font-size: 22px; color: #f7d37a; font-weight: 900; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .stat b { display: block; font-size: 34px; color: #f7d37a; }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; }
-    footer { border-top: 1px solid rgba(255,255,255,.12); padding: 30px 0; color: rgba(255,255,255,.62); }
-    .floating {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 30;
-      display: grid;
-      gap: 10px;
-    }
-    .floating a { min-width: 148px; }
-    @media (max-width: 900px) {
-      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
-      .cards, .properties, .stats { grid-template-columns: 1fr 1fr; }
-      .menu { display: none; }
-    }
-    @media (max-width: 560px) {
-      .cards, .properties, .stats { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
-      .floating { left: 16px; right: 16px; grid-template-columns: 1fr 1fr; }
-      .floating a { min-width: 0; padding: 0 12px; font-size: 14px; }
-    }
-  </style>
+  <title>Om Properties | Gen-Z Real Estate Platform</title>
+  <meta name="description" content="Om Properties - Kaithal, Jind aur nearby Haryana areas mein verified homes, plots, commercial spaces, agricultural land, rentals, valuation and investment consulting." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="splash" class="splash" aria-label="Loading Om Properties">
+    <div class="splash-card">
+      <div class="logo-mark big">OM</div>
+      <h1>Om Properties</h1>
+      <p>Verified real estate. Luxury wali feel.</p>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="#home">Om Properties <small>Verified Real Estate Advisors</small></a>
-      <nav class="menu" aria-label="Main navigation">
-        <a href="#services">Services</a>
+      <a class="brand" href="#home" aria-label="Om Properties home"><span class="logo-mark">OM</span><span>Om Properties<small>Kaithal • Jind • Haryana</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <nav class="menu" id="mainMenu" aria-label="Main navigation">
         <a href="#properties">Properties</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#services">Services</a>
+        <a href="#tools">Tools</a>
+        <a href="#guides">Guides</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn" href="tel:+919876543210">Call Now</a>
+      <div class="nav-actions">
+        <button class="ghost-btn" id="themeToggle">🌙</button>
+        <a class="btn small" href="tel:+919876543210">Call Now</a>
+      </div>
     </div>
   </header>
 
   <main id="home">
-    <section class="hero">
+    <section class="hero section-reveal">
       <div class="container hero-grid">
-        <div>
-          <span class="badge">Premium real estate advisors in Haryana</span>
-          <h1>Find verified property in <span class="gold">Kaithal & Jind</span></h1>
-          <p class="lead">Buy, sell, rent, and invest with local experts. Site visit, negotiation aur documentation support ek hi jagah.</p>
+        <div class="hero-copy">
+          <span class="badge">🔥 Gen-Z premium property portal</span>
+          <h1>Real estate, but <span class="gold gradient-text">cinematic</span>.</h1>
+          <p class="lead">Homes, plots, shops, land, rentals aur investment deals — sab verified, searchable, animated aur mobile-ready. Normal banda website khole aur sab kuch clearly dikhe.</p>
           <div class="actions">
-            <a class="btn" href="#properties">View Properties</a>
-            <a class="btn secondary" href="#contact">Book Consultation</a>
+            <a class="btn magnetic" href="#properties">Explore Properties</a>
+            <button class="btn secondary magnetic" data-open-modal="visitModal">Book Site Visit</button>
+          </div>
+          <div class="hero-stats">
+            <div><b data-count="12">0</b><span>Years</span></div>
+            <div><b data-count="350">0</b><span>Happy Clients</span></div>
+            <div><b data-count="75">0</b><span>Deals Closed</span></div>
           </div>
         </div>
-        <form class="panel quick-form" action="#contact">
-          <h2>Quick Requirement</h2>
-          <label>Location
-            <input name="location" placeholder="Kaithal, Jind, Highway..." />
-          </label>
-          <label>Property Type
-            <select name="type">
-              <option>Residential</option>
-              <option>Commercial</option>
-              <option>Plot</option>
-              <option>Agricultural Land</option>
-              <option>Rental</option>
-            </select>
-          </label>
-          <button class="btn" type="submit">Search / Enquire</button>
-        </form>
+
+        <aside class="showcase-card tilt-card" id="tiltCard">
+          <div class="live-pill">Live Showcase</div>
+          <img id="showcaseImage" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" alt="Featured property" />
+          <div class="showcase-info">
+            <p id="showcaseMeta">For Sale • Residential</p>
+            <h2 id="showcaseTitle">Modern Family Home</h2>
+            <strong id="showcasePrice">₹86 Lac</strong>
+          </div>
+          <div class="showcase-tabs" id="showcaseTabs"></div>
+        </aside>
       </div>
     </section>
 
-    <section>
-      <div class="container split">
-        <div>
-          <p class="gold">About Us</p>
-          <h2 class="section-title">Local expertise with premium client experience.</h2>
+    <section class="search-section section-reveal">
+      <div class="container glass-panel">
+        <div class="section-head compact"><span class="eyebrow">Instant Search</span><h2>Filter lagao, result turant dekho.</h2></div>
+        <div class="search-grid">
+          <label>Keyword / Area<input id="searchInput" placeholder="Sector 20, Jind, commercial, plot..." /></label>
+          <label>Type<select id="typeFilter"><option value="All">All</option><option>Residential</option><option>Commercial</option><option>Plot</option><option>Agricultural</option><option>Farmhouse</option></select></label>
+          <label>Purpose<select id="purposeFilter"><option value="All">All</option><option>For Sale</option><option>For Rent</option><option>Investment</option></select></label>
+          <label>Budget<select id="budgetFilter"><option value="999999999">Any</option><option value="6000000">Under ₹60 Lac</option><option value="10000000">Under ₹1 Cr</option><option value="15000000">Under ₹1.5 Cr</option></select></label>
+          <button class="btn" id="saveSearchBtn">Save Search</button>
         </div>
-        <p class="muted">Om Properties verified listings, transparent negotiation, legal-document coordination aur practical investment guidance provide karta hai for residential homes, commercial spaces, plots, agricultural land and rentals.</p>
+        <div class="chips" id="chips"></div>
       </div>
     </section>
 
-    <section id="services" style="background: rgba(255,255,255,.035);">
+    <section id="properties" class="section-reveal">
       <div class="container">
-        <h2 class="section-title">Complete Property Services</h2>
-        <p class="muted">Har requirement ke liye trusted local support.</p>
-        <div class="cards">
-          <article class="card"><h3>Residential</h3><p class="muted">Homes, floors aur family-friendly locations.</p></article>
-          <article class="card"><h3>Commercial</h3><p class="muted">SCO, shops, office spaces and investment assets.</p></article>
-          <article class="card"><h3>Plots</h3><p class="muted">Registry-ready plots with clear-title guidance.</p></article>
-          <article class="card"><h3>Agricultural Land</h3><p class="muted">Farming, land banking and highway belt options.</p></article>
-          <article class="card"><h3>Rentals</h3><p class="muted">Residential and commercial rental assistance.</p></article>
-          <article class="card"><h3>Investment</h3><p class="muted">Growth corridor aur appreciation-focused advice.</p></article>
-          <article class="card"><h3>Documentation</h3><p class="muted">Registry, paper checking and coordination support.</p></article>
-          <article class="card"><h3>Consultation</h3><p class="muted">Requirement ke hisaab se shortlist and site visit.</p></article>
-        </div>
+        <div class="section-head"><span class="eyebrow">Featured Listings</span><h2>Verified properties jo actually visible hain.</h2><p>Cards me save, compare, share, image view aur enquiry actions diye gaye hain.</p></div>
+        <div class="properties" id="propertyGrid"></div>
+        <div class="empty-state" id="emptyState"><h3>No match mila 😅</h3><p>Filters thode loose karo ya WhatsApp par requirement bhejo.</p></div>
       </div>
     </section>
 
-    <section id="properties">
+    <section id="services" class="section-reveal soft-bg">
       <div class="container">
-        <p class="gold">Featured Listings</p>
-        <h2 class="section-title">Ready-to-enquire properties</h2>
-        <div class="properties">
-          <article class="card property">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Residential plot" />
-            <div class="property-body"><span class="tag">For Sale</span><h3>Premium Residential Plot</h3><p class="muted">Sector 20, Kaithal · 180 sq yd</p><p class="price">₹42 Lac</p></div>
-          </article>
-          <article class="card property">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial SCO" />
-            <div class="property-body"><span class="tag">Investment</span><h3>Main Road Commercial SCO</h3><p class="muted">Ambala Road, Kaithal · 92 sq yd</p><p class="price">₹1.35 Cr</p></div>
-          </article>
-          <article class="card property">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Agricultural land" />
-            <div class="property-body"><span class="tag">For Sale</span><h3>Highway Belt Agricultural Land</h3><p class="muted">Kaithal-Jind Highway · 6 acres</p><p class="price">₹98 Lac</p></div>
-          </article>
+        <div class="section-head"><span class="eyebrow">Services</span><h2>Sab kuch ek jagah — no boring dealer vibes.</h2></div>
+        <div class="service-grid">
+          <article>🏠<h3>Buy / Sell Homes</h3><p>Family homes, floors and verified residential options.</p></article>
+          <article>🏢<h3>Commercial Growth</h3><p>SCO, shops, offices and rental-income assets.</p></article>
+          <article>🌾<h3>Land Banking</h3><p>Agricultural and highway belt land with document help.</p></article>
+          <article>📍<h3>Plots & Registry</h3><p>Clear-title plots, negotiation and registry support.</p></article>
+          <article>📈<h3>Investment Desk</h3><p>ROI-focused appreciation and rental guidance.</p></article>
+          <article>🧾<h3>Legal Docs</h3><p>Paper checking, checklist and closing coordination.</p></article>
+          <article>🌍<h3>NRI Support</h3><p>Remote shortlist, video walkthrough and visit planning.</p></article>
+          <article>💬<h3>Rental Services</h3><p>Tenant-ready residential and commercial matching.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="why-us" style="background: rgba(255,255,255,.035);">
-      <div class="container stats">
-        <div class="card stat"><b>12+</b><p>Years local guidance</p></div>
-        <div class="card stat"><b>350+</b><p>Customer requirements served</p></div>
-        <div class="card stat"><b>100%</b><p>Verified-before-share process</p></div>
+    <section id="tools" class="section-reveal">
+      <div class="container tools-grid">
+        <div class="glass-panel calculator">
+          <span class="eyebrow">EMI Calculator</span>
+          <h2>Budget clear rakho.</h2>
+          <label>Loan Amount<input id="loanAmount" type="number" value="5000000" /></label>
+          <label>Interest %<input id="interestRate" type="number" value="8.5" step="0.1" /></label>
+          <label>Years<input id="loanYears" type="number" value="20" /></label>
+          <button class="btn" id="calculateEmi">Calculate EMI</button>
+          <div class="result-box" id="emiResult">₹43,391 / month approx</div>
+        </div>
+        <div class="glass-panel platform-list">
+          <span class="eyebrow">Platform Ready</span>
+          <h2>Future backend ke liye architecture feel.</h2>
+          <ul>
+            <li>✅ Favorites & compare UI</li><li>✅ Recently viewed ready</li><li>✅ Virtual tour buttons</li><li>✅ Inquiry + CRM flow</li><li>✅ Blog & SEO sections</li><li>✅ Admin dashboard entry</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section-reveal soft-bg">
+      <div class="container map-grid">
+        <div><span class="eyebrow">Popular Locations</span><h2>Kaithal-Jind hot zones</h2><p class="muted">Location chips search se connected hain.</p><div class="chips location-chips"></div></div>
+        <iframe title="Om Properties office map" loading="lazy" src="https://www.google.com/maps?q=Near%20Pehowa%20Chowk%20Kaithal%20Haryana%20India&output=embed"></iframe>
+      </div>
+    </section>
+
+    <section id="guides" class="section-reveal">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Trust + Guides</span><h2>Reviews, badges, blogs aur FAQs.</h2></div>
+        <div class="trust-grid">
+          <article><b>4.9★</b><p>Customer review score</p></article><article><b>100%</b><p>Verified-before-share process</p></article><article><b>24h</b><p>Fast requirement callback</p></article>
+        </div>
+        <div class="guide-grid"><article><h3>2026 Haryana property trends</h3><p>Growth corridors and buyer demand explained.</p></article><article><h3>Plot registry checklist</h3><p>Documents to check before token and registry.</p></article><article><h3>Rental yield hotspots</h3><p>Commercial pockets for stable monthly income.</p></article></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-reveal cta-section">
       <div class="container contact-grid">
-        <div>
-          <p class="gold">Contact Om Properties</p>
-          <h2 class="section-title">Apni requirement bhejo</h2>
-          <p class="muted">Call, WhatsApp ya form se enquiry bhejein. Team aapko verified options share karegi.</p>
-          <div class="actions">
-            <a class="btn" href="tel:+919876543210">+91 98765 43210</a>
-            <a class="btn secondary" href="mailto:info@ompropertieskaithal.com">Email Us</a>
-          </div>
-        </div>
-        <form class="panel" action="mailto:info@ompropertieskaithal.com" method="post" enctype="text/plain">
-          <label>Name<input name="name" required placeholder="Your name" /></label><br />
-          <label>Phone<input name="phone" required placeholder="Phone number" /></label><br />
-          <label>Requirement<textarea name="requirement" rows="5" placeholder="Mujhe plot / home / commercial property chahiye..."></textarea></label><br />
+        <div><span class="eyebrow">Contact</span><h2>Requirement bhejo, verified options lo.</h2><p>Call, WhatsApp, appointment booking, valuation request aur visit scheduling sab yahin se.</p><div class="actions"><a class="btn" href="tel:+919876543210">Call +91 98765 43210</a><a class="btn secondary" href="https://wa.me/919876543210">WhatsApp</a></div></div>
+        <form id="leadForm" class="glass-panel">
+          <label>Name<input name="name" required placeholder="Your name" /></label>
+          <label>Phone<input name="phone" required placeholder="Phone number" /></label>
+          <label>Requirement<textarea name="message" rows="5" placeholder="Mujhe plot / home / shop / land chahiye..."></textarea></label>
           <button class="btn" type="submit">Send Enquiry</button>
         </form>
       </div>
     </section>
   </main>
 
-  <div class="floating">
-    <a class="btn" href="tel:+919876543210">Call</a>
-    <a class="btn secondary" href="https://wa.me/919876543210">WhatsApp</a>
-  </div>
+  <div class="floating"><button class="round" id="topBtn">↑</button><a class="round whatsapp" href="https://wa.me/919876543210">💬</a></div>
+  <div class="toast" id="toast"></div>
 
-  <footer>
-    <div class="container">© 2026 Om Properties · Near Pehowa Chowk, Kaithal, Haryana 136027</div>
-  </footer>
+  <dialog id="visitModal" class="modal"><button class="close-modal" data-close-modal>×</button><h2>Book Site Visit</h2><p class="muted">Apna naam aur phone bhejo, advisor callback karega.</p><form id="visitForm"><input required placeholder="Name" /><input required placeholder="Phone" /><button class="btn">Confirm Visit</button></form></dialog>
+  <dialog id="imageModal" class="modal image-modal"><button class="close-modal" data-close-modal>×</button><img id="modalImage" alt="Property full view" /></dialog>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
