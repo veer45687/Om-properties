@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --gold:#d7a83f; --emerald:#0f6b53; color-scheme: dark; }
+:root { --gold:#d7a83f; --emerald:#0f6b53; --font-inter: Inter, system-ui, sans-serif; --font-poppins: Poppins, Inter, system-ui, sans-serif; color-scheme: dark; }
 html { scroll-behavior: smooth; }
 body { margin:0; font-family: var(--font-inter), Inter, system-ui, sans-serif; background:#070706; color:#fff; }
 ::selection { background: rgba(215,168,63,.45); }

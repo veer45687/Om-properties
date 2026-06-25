@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
 import { Footer } from '@/components/layout/footer';
 import { FloatingActions } from '@/components/layout/floating-actions';
 import { Header } from '@/components/layout/header';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700','800'], variable: '--font-poppins' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://omproperties.example.com'),
@@ -18,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-IN" suppressHydrationWarning><body className={`${inter.variable} ${poppins.variable}`}><Header />{children}<Footer /><FloatingActions /></body></html>;
+  return <html lang="en-IN" suppressHydrationWarning><body><Header />{children}<Footer /><FloatingActions /></body></html>;
 }
