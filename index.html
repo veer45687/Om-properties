@@ -3,66 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Om Properties is a luxury real estate advisory for homes, plots, commercial assets and land across Haryana." />
-  <title>Om Properties | Luxury Real Estate in Haryana</title>
-  <link rel="icon" href="favicon.ico" type="image/svg+xml" />
+  <meta name="description" content="Om Properties is a premium real estate advisory and property discovery platform for Kaithal, Jind and Haryana growth corridors." />
+  <meta name="keywords" content="real estate Kaithal, property Jind, plots Kaithal, commercial property Haryana, Om Properties" />
+  <meta name="theme-color" content="#070604" />
+  <meta property="og:title" content="Om Properties | Premium Real Estate in Kaithal & Jind" />
+  <meta property="og:description" content="Discover verified homes, plots, commercial spaces and land with concierge advisory, visit booking, EMI tools and local market insight." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" />
+  <title>Om Properties | Premium Real Estate in Kaithal & Jind</title>
+  <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Splash Screen -->
-  <div class="splash" id="splash"><div class="splash-card"><span class="logo-mark">ॐ</span><h1>Om Properties</h1><p>Preparing your private estate experience</p><div class="loader"></div></div></div>
-
-  <!-- Toast + scroll progress -->
-  <div class="progress" id="progress"></div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Header / Navigation -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="splash" id="splash" aria-hidden="true"><div class="splash-card"><span class="logo-mark">ॐ</span><p>Om Properties</p><strong>Private estate experience loading</strong><div class="loader"></div></div></div>
+  <div class="progress" id="progress"></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
   <header class="site-header" id="header">
     <a class="brand" href="#home" aria-label="Om Properties home"><span>ॐ</span><strong>Om Properties</strong></a>
-    <nav class="nav" id="nav" aria-label="Primary navigation">
-      <a href="#properties">Properties</a><a href="#services">Services</a><a href="#tools">Tools</a><a href="#stories">Stories</a><a href="#contact">Contact</a>
-    </nav>
-    <div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button><button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+    <nav class="nav" id="nav" aria-label="Primary navigation"><a href="#properties">Properties</a><a href="#advisory">Advisory</a><a href="#tools">Tools</a><a href="#insights">Insights</a><a href="#contact">Contact</a></nav>
+    <div class="header-actions"><a class="phone-link" href="tel:+919876543210">Call now</a><button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
   </header>
-
-  <main id="home">
-    <!-- Hero -->
-    <section class="hero section" id="hero">
+  <main id="main">
+    <section class="hero section" id="home">
       <div class="hero-bg" id="heroBg"></div><div class="hero-overlay"></div>
-      <div class="hero-content reveal"><p class="eyebrow"> Real-estate atelier · Haryana</p><h1>Live exceptionally. <span>Invest beautifully.</span></h1><p class="hero-copy">Premium homes, commercial spaces, plots and agricultural land curated with cinematic discovery, discreet advisory and paperwork-led trust.</p><div class="hero-actions"><a class="btn primary" href="#properties">Explore listings</a><button class="btn glass" data-modal="visitModal">Arrange private viewing</button></div><div class="stats"><div><strong data-counter="12">0</strong><small>Years</small></div><div><strong data-counter="350">0</strong><small>Clients</small></div><div><strong data-counter="75">0</strong><small>Deals</small></div></div></div>
-      <aside class="hero-card glass-card reveal"><span class="badge">Curated estate</span><img id="heroCardImage" alt="Featured property" /><div><p id="heroMeta"></p><h2 id="heroTitle"></h2><span id="heroPrice"></span></div><div class="hero-tabs" id="heroTabs"></div></aside>
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="hero-content reveal"><p class="eyebrow">Kaithal & Jind real-estate atelier</p><h1>Find property with the confidence of a private advisor.</h1><p class="hero-copy">Verified homes, registry-ready plots, commercial addresses and agricultural land curated with cinematic discovery, clear paperwork and local intelligence.</p><div class="hero-actions"><a class="btn primary" href="#properties">Explore verified listings</a><button class="btn glass" data-modal="visitModal">Book a private visit</button></div><div class="stats"><div><strong data-counter="12">0</strong><small>Years of local advisory</small></div><div><strong data-counter="420">0</strong><small>Families & investors served</small></div><div><strong data-counter="98">0</strong><small>Document checklist score</small></div></div></div>
+      <aside class="hero-card glass-card reveal" aria-label="Featured property"><span class="badge">Verified spotlight</span><img id="heroCardImage" alt="Featured property" loading="eager" /><div class="hero-card-body"><p id="heroMeta"></p><h2 id="heroTitle"></h2><span id="heroPrice"></span></div><div class="hero-tabs" id="heroTabs"></div></aside>
     </section>
-
-    <!-- Search -->
-    <section class="search-panel section reveal" aria-label="Property search"><form id="searchForm"><label>Search anything<input id="searchInput" type="search" placeholder="Try: Sector 20, highway land, family home" /></label><label>Type<select id="typeFilter"><option>All</option><option>Residential</option><option>Commercial</option><option>Agricultural</option><option>Plot</option><option>Farmhouse</option></select></label><label>Budget<select id="budgetFilter"><option value="all">Any</option><option value="6000000">Under ₹60 Lac</option><option value="10000000">Under ₹1 Cr</option><option value="999999999">Premium</option></select></label><button class="btn primary" type="submit">Search</button></form><div class="chips" id="locationChips"></div></section>
-
-    <!-- Services -->
-    <section class="section" id="services"><div class="section-heading reveal"><p class="eyebrow">Services</p><h2>A complete advisory suite for serious decisions.</h2><p>Buy, rent, invest, value and close with a calm luxury experience built around clarity.</p></div><div class="service-grid" id="serviceGrid"></div></section>
-
-    <!-- Properties -->
-    <section class="section" id="properties"><div class="section-heading reveal"><p class="eyebrow">Signature listings</p><h2>Premium opportunities presented like a private portfolio.</h2><p>Browse residences, commercial addresses and land parcels with immediate advisory access.</p></div><div class="property-slider reveal"><button class="slider-btn" id="prevProperty">‹</button><div class="property-track" id="propertyTrack"></div><button class="slider-btn" id="nextProperty">›</button></div><p class="empty-state" id="emptyState">No properties match your search. Try a different keyword or type.</p></section>
-
- <!-- Tools -->
-    <section class="section tools" id="tools"><div class="section-heading reveal"><p class="eyebrow">Private client tools</p><h2>Technology with a concierge sensibility.</h2></div><div class="tool-grid" id="toolGrid"></div></section>
-
-    
-    <!-- Gallery Carousel -->
-    <section class="section gallery reveal"><div class="section-heading"><p class="eyebrow">Estate cinema</p><h2>Luxury details, calm spaces and growth corridors.</h2><p>Want to use your own laptop photo? Click below, choose an image from your computer, and it will preview instantly on this website.</p></div><div class="carousel"><img id="carouselImage" alt="Luxury real estate gallery" /><button id="carouselPrev">‹</button><button id="carouselNext">›</button></div><div class="photo-helper"><label class="btn primary" for="localPhotoInput">Use photo from laptop</label><input id="localPhotoInput" type="file" accept="image/*" /><p>Tip: For permanent use, place the image in this project folder and update the image path in <code>script.js</code>.</p></div></section>
-
-    <!-- Trust + Testimonials -->
-    <section class="section stories" id="stories"><div class="trust-grid reveal"><div><strong data-counter="4.9">0</strong><small>Review score</small></div><div><strong data-counter="24">0</strong><small>Hour response</small></div><div><strong data-counter="100">0</strong><small>% paperwork support</small></div></div><div class="section-heading reveal"><p class="eyebrow">Social proof</p><h2>Client stories and field intelligence.</h2></div><div class="testimonial-grid" id="testimonialGrid"></div></section>
-
-    <!-- Contact -->
-    <section class="section contact" id="contact"><div class="contact-card reveal"><div><p class="eyebrow">Begin privately</p><h2>Tell us what you want to own next.</h2><p>Receive a curated shortlist, viewing plan and documentation guidance from Om Properties.</p><ul><li>📍 Near Pehowa Chowk, Kaithal, Haryana</li><li>☎ +91 98765 43210</li><li>✉ info@ompropertieskaithal.com</li></ul></div><form id="contactForm" novalidate><input name="name" placeholder="Full name" required /><input name="phone" placeholder="Phone number" required pattern="[0-9+\-\s]{8,}" /><input name="email" type="email" placeholder="Email address" required /><select name="interest"><option>Buying a property</option><option>Selling a property</option><option>Land investment</option><option>Commercial lease</option></select><textarea name="message" placeholder="Tell us about your requirement" required></textarea><button class="btn primary" type="submit">Send request</button></form></div></section>
+    <section class="search-panel section reveal" aria-label="Advanced property search"><form id="searchForm"><label>Instant search<input id="searchInput" type="search" placeholder="Sector 20, Jind office, highway land..." /></label><label>Category<select id="typeFilter"><option>All</option><option>Residential</option><option>Commercial</option><option>Agricultural</option><option>Plot</option><option>Farmhouse</option></select></label><label>Budget<select id="budgetFilter"><option value="all">Any budget</option><option value="6000000">Under ₹60 Lac</option><option value="10000000">Under ₹1 Cr</option><option value="20000000">Under ₹2 Cr</option></select></label><label>Sort<select id="sortFilter"><option value="featured">Featured</option><option value="low">Price low to high</option><option value="high">Price high to low</option></select></label><button class="btn primary" type="submit">Search</button></form><div class="chips" id="locationChips"></div></section>
+    <section class="section" id="advisory"><div class="section-heading reveal"><p class="eyebrow">Concierge advisory</p><h2>Every serious property decision deserves a calmer process.</h2><p>From first shortlist to registry day, Om Properties combines neighborhood knowledge with transparent documentation support.</p></div><div class="service-grid" id="serviceGrid"></div></section>
+    <section class="section properties" id="properties"><div class="section-heading reveal"><p class="eyebrow">Signature portfolio</p><h2>Verified opportunities across Kaithal, Jind and growth corridors.</h2><p>Save favorites, compare options and request guided visits without losing context.</p></div><div class="property-toolbar reveal"><div><strong id="resultCount">0 listings</strong><small>Live filtered from structured mock data</small></div><div><button class="btn glass" id="compareBtn">Compare selected</button><button class="btn glass" id="clearSavedBtn">Clear saved</button></div></div><div class="property-grid" id="propertyTrack"></div><div class="empty-state" id="emptyState"><h3>No matching estates found</h3><p>Adjust your filters or request a custom search from our advisory desk.</p></div></section>
+    <section class="section tools" id="tools"><div class="section-heading reveal"><p class="eyebrow">Client tools</p><h2>A live-application experience for confident decisions.</h2></div><div class="tool-layout"><div class="tool-grid" id="toolGrid"></div><form class="calculator glass-card reveal" id="emiForm"><p class="eyebrow">EMI calculator</p><h3>Estimate your monthly commitment</h3><label>Loan amount<input id="loanAmount" type="number" value="5000000" min="100000" /></label><label>Interest rate %<input id="loanRate" type="number" value="8.5" step="0.1" /></label><label>Tenure years<input id="loanYears" type="number" value="20" min="1" /></label><output id="emiOutput">₹43,391 / month</output></form></div></section>
+    <section class="section showcase reveal"><div class="section-heading"><p class="eyebrow">Estate cinema</p><h2>Galleries, video tours and virtual walkthrough readiness.</h2></div><div class="showcase-grid"><div class="carousel"><img id="carouselImage" alt="Luxury property gallery" loading="lazy" /><button id="carouselPrev" aria-label="Previous image">‹</button><button id="carouselNext" aria-label="Next image">›</button></div><div class="video-card glass-card"><span>▶</span><h3>Video tour support</h3><p>Each listing is structured for hosted walkthrough videos, image galleries and future 360° virtual tours.</p><button class="btn primary" data-modal="galleryModal">Open gallery</button></div></div></section>
+    <section class="section map-section"><div class="section-heading reveal"><p class="eyebrow">Location intelligence</p><h2>Growth corridors, landmarks and visit planning in one view.</h2></div><div class="map-card reveal"><iframe title="Kaithal map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kaithal%20Haryana&output=embed"></iframe><div><h3>Local desk: Pehowa Chowk, Kaithal</h3><p>Plan site visits across Sector 20, Ambala Road, Jind Bypass, Civil Lines and highway belts with our local advisory team.</p><a class="btn glass" href="https://www.google.com/maps/search/?api=1&query=Kaithal%20Haryana" target="_blank" rel="noreferrer">Open in Google Maps</a></div></div></section>
+    <section class="section stories" id="insights"><div class="trust-grid reveal"><div><strong data-counter="4.9">0</strong><small>Client review score</small></div><div><strong data-counter="24">0</strong><small>Hour response target</small></div><div><strong data-counter="100">0</strong><small>% paperwork guidance</small></div></div><div class="section-heading reveal"><p class="eyebrow">Proof & perspective</p><h2>Client stories, agent profiles and market notes.</h2></div><div class="testimonial-grid" id="testimonialGrid"></div><div class="insight-grid" id="insightGrid"></div></section>
+    <section class="section faq"><div class="section-heading reveal"><p class="eyebrow">FAQ</p><h2>Answers before you visit.</h2></div><div class="faq-list" id="faqList"></div></section>
+    <section class="section contact" id="contact"><div class="contact-card reveal"><div><p class="eyebrow">Begin privately</p><h2>Tell us what you want to own next.</h2><p>Receive a curated shortlist, viewing route and document checklist from Om Properties.</p><ul><li>📍 Near Pehowa Chowk, Kaithal, Haryana</li><li>☎ <a href="tel:+919876543210">+91 98765 43210</a></li><li>💬 <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer">WhatsApp advisory desk</a></li><li>✉ info@ompropertieskaithal.com</li></ul></div><form id="contactForm" novalidate><input name="name" placeholder="Full name" required /><input name="phone" placeholder="Phone number" required pattern="[0-9+\-\s]{8,}" /><input name="email" type="email" placeholder="Email address" required /><select name="interest"><option>Buying a property</option><option>Selling a property</option><option>Property valuation</option><option>Book a site visit</option></select><textarea name="message" placeholder="Share location, budget and timeline" required></textarea><button class="btn primary" type="submit">Send request</button></form></div></section>
   </main>
-
-  <!-- Modals / Floating Controls -->
-  <dialog class="modal" id="visitModal"><button class="close-modal" data-close>×</button><h2>Private viewing request</h2><p>Share your preferred property and our advisory team will coordinate a discreet visit.</p><button class="btn primary" data-close>Continue</button></dialog>
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+  <dialog class="modal" id="visitModal"><button class="close-modal" data-close aria-label="Close">×</button><h2>Schedule a private viewing</h2><form id="visitForm"><input name="visitName" placeholder="Your name" required /><input name="visitPhone" placeholder="WhatsApp / phone" required /><input name="visitDate" type="date" required /><button class="btn primary" type="submit">Confirm visit request</button></form></dialog>
+  <dialog class="modal" id="galleryModal"><button class="close-modal" data-close aria-label="Close">×</button><h2>Gallery & virtual tour</h2><p>This production-ready placeholder supports listing galleries, hosted video tours and 360° embeds once media is supplied.</p><div class="virtual-tour">360°</div></dialog>
+  <dialog class="modal compare-modal" id="compareModal"><button class="close-modal" data-close aria-label="Close">×</button><h2>Property comparison</h2><div id="compareContent"></div></dialog>
+  <a class="float-action whatsapp" href="https://wa.me/919876543210" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">💬</a><a class="float-action call" href="tel:+919876543210" aria-label="Call Om Properties">☎</a><button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
   <script src="script.js"></script>
 </body>
 </html>
