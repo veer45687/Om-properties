@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Om Properties is a luxury real estate advisory for verified homes, plots, commercial assets and land across Haryana." />
+  <title>Om Properties | Luxury Real Estate in Haryana</title>
+  <link rel="icon" href="favicon.ico" type="image/svg+xml" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div class="splash" id="splash"><div class="splash-card"><span class="logo-mark">ॐ</span><h1>Om Properties</h1><p>Preparing your private estate experience</p><div class="loader"></div></div></div>
+
+  <!-- Toast + scroll progress -->
+  <div class="progress" id="progress"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <a class="brand" href="#home" aria-label="Om Properties home"><span>ॐ</span><strong>Om Properties</strong></a>
+    <nav class="nav" id="nav" aria-label="Primary navigation">
+      <a href="#properties">Properties</a><a href="#services">Services</a><a href="#tools">Tools</a><a href="#stories">Stories</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☾</button><button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero section" id="hero">
+      <div class="hero-bg" id="heroBg"></div><div class="hero-overlay"></div>
+      <div class="hero-content reveal"><p class="eyebrow">Private real-estate atelier · Haryana</p><h1>Live exceptionally. <span>Invest beautifully.</span></h1><p class="hero-copy">Verified homes, commercial spaces, premium plots and agricultural land curated with cinematic discovery, discreet advisory and paperwork-led trust.</p><div class="hero-actions"><a class="btn primary" href="#properties">Explore listings</a><button class="btn glass" data-modal="visitModal">Arrange private viewing</button></div><div class="stats"><div><strong data-counter="12">0</strong><small>Years</small></div><div><strong data-counter="350">0</strong><small>Clients</small></div><div><strong data-counter="75">0</strong><small>Deals</small></div></div></div>
+      <aside class="hero-card glass-card reveal"><span class="badge">Curated estate</span><img id="heroCardImage" alt="Featured property" /><div><p id="heroMeta"></p><h2 id="heroTitle"></h2><span id="heroPrice"></span></div><div class="hero-tabs" id="heroTabs"></div></aside>
+    </section>
+
+    <!-- Search -->
+    <section class="search-panel section reveal" aria-label="Property search"><form id="searchForm"><label>Search anything<input id="searchInput" type="search" placeholder="Try: Sector 20, highway land, family home" /></label><label>Type<select id="typeFilter"><option>All</option><option>Residential</option><option>Commercial</option><option>Agricultural</option><option>Plot</option><option>Farmhouse</option></select></label><label>Budget<select id="budgetFilter"><option value="all">Any</option><option value="6000000">Under ₹60 Lac</option><option value="10000000">Under ₹1 Cr</option><option value="999999999">Premium</option></select></label><button class="btn primary" type="submit">Search</button></form><div class="chips" id="locationChips"></div></section>
+
+    <!-- Services -->
+    <section class="section" id="services"><div class="section-heading reveal"><p class="eyebrow">Services</p><h2>A complete advisory suite for serious decisions.</h2><p>Buy, rent, invest, value, verify and close with a calm luxury experience built around clarity.</p></div><div class="service-grid" id="serviceGrid"></div></section>
+
+    <!-- Properties -->
+    <section class="section" id="properties"><div class="section-heading reveal"><p class="eyebrow">Signature listings</p><h2>Verified opportunities presented like a private portfolio.</h2><p>Browse residences, commercial addresses and land parcels with immediate advisory access.</p></div><div class="property-slider reveal"><button class="slider-btn" id="prevProperty">‹</button><div class="property-track" id="propertyTrack"></div><button class="slider-btn" id="nextProperty">›</button></div><p class="empty-state" id="emptyState">No properties match your search. Try a different keyword or type.</p></section>
+
+    <!-- Tools -->
+    <section class="section tools" id="tools"><div class="section-heading reveal"><p class="eyebrow">Private client tools</p><h2>Technology with a concierge sensibility.</h2></div><div class="tool-grid" id="toolGrid"></div></section>
+
+    <!-- Gallery Carousel -->
+    <section class="section gallery reveal"><div class="section-heading"><p class="eyebrow">Estate cinema</p><h2>Luxury details, calm spaces and growth corridors.</h2></div><div class="carousel"><img id="carouselImage" alt="Luxury real estate gallery" /><button id="carouselPrev">‹</button><button id="carouselNext">›</button></div></section>
+
+    <!-- Trust + Testimonials -->
+    <section class="section stories" id="stories"><div class="trust-grid reveal"><div><strong data-counter="4.9">0</strong><small>Review score</small></div><div><strong data-counter="24">0</strong><small>Hour response</small></div><div><strong data-counter="100">0</strong><small>% verified</small></div></div><div class="section-heading reveal"><p class="eyebrow">Social proof</p><h2>Client stories and field intelligence.</h2></div><div class="testimonial-grid" id="testimonialGrid"></div></section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact"><div class="contact-card reveal"><div><p class="eyebrow">Begin privately</p><h2>Tell us what you want to own next.</h2><p>Receive a curated shortlist, viewing plan and documentation guidance from Om Properties.</p><ul><li>📍 Near Pehowa Chowk, Kaithal, Haryana</li><li>☎ +91 98765 43210</li><li>✉ info@ompropertieskaithal.com</li></ul></div><form id="contactForm" novalidate><input name="name" placeholder="Full name" required /><input name="phone" placeholder="Phone number" required pattern="[0-9+\-\s]{8,}" /><input name="email" type="email" placeholder="Email address" required /><select name="interest"><option>Buying a property</option><option>Selling a property</option><option>Land investment</option><option>Commercial lease</option></select><textarea name="message" placeholder="Tell us about your requirement" required></textarea><button class="btn primary" type="submit">Send request</button></form></div></section>
+  </main>
+
+  <!-- Modals / Floating Controls -->
+  <dialog class="modal" id="visitModal"><button class="close-modal" data-close>×</button><h2>Private viewing request</h2><p>Share your preferred property and our advisory team will coordinate a discreet visit.</p><button class="btn primary" data-close>Continue</button></dialog>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
