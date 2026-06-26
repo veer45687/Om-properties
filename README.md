@@ -1,92 +1,50 @@
 # Om Properties
 
-A simple, elegant, beginner-friendly luxury real estate website for Om Properties. The project is now a static website that runs directly in the browser by opening `index.html` — no framework, build tools, or package installation required.
+A production-focused static real estate platform for Om Properties, serving Kaithal, Jind and nearby Haryana growth corridors. The site runs directly in the browser with no build step and is structured so property data can later be replaced by an API or CMS.
 
-## Project Description
+## What is included
 
-Om Properties presents verified homes, commercial spaces, plots, farmhouse land, and agricultural investment opportunities across Kaithal, Jind, Kurukshetra, and nearby Haryana corridors. The website uses a dark luxury aesthetic with glassmorphism, subtle animation, search, sliders, modals, counters, responsive layouts, and polished interactions.
+- Premium cinematic hero with splash screen, sticky navigation, scroll progress and theme toggle.
+- Advanced property search with instant keyword filtering, category filtering, budget filtering and sorting.
+- Structured mock listing data for homes, plots, commercial spaces, farmhouse parcels and agricultural land.
+- Favorites saved in browser storage with safe fallbacks for restricted browser privacy modes.
+- Side-by-side property comparison modal.
+- EMI calculator, Google Maps embed, gallery carousel, video-tour/360 placeholder and private visit booking form.
+- WhatsApp and click-to-call actions for mobile-first lead capture.
+- Advisory services, testimonials, market insights, FAQ, contact form validation and toast notifications.
+- Responsive glassmorphism UI optimized for mobile, tablet and desktop.
+- SEO metadata, Open Graph tags, `robots.txt` and `sitemap.xml`.
 
-## Features
-
-- Semantic single-page HTML5 structure
-- Dark luxury theme with optional light theme toggle
-- Responsive design for desktop, tablet, and mobile
-- Glassmorphism cards and premium gradients
-- Splash screen and loading animation
-- Sticky navigation and mobile menu
-- Hero image rotation and animated featured property card
-- Property search and filtering
-- Property slider and estate gallery carousel
-- Scroll reveal animations and animated counters
-- Modal for private viewing requests
-- Toast notifications
-- Contact form validation
-- Scroll progress indicator and scroll-to-top button
-- Clean comments and modular JavaScript sections
-
-## Folder Structure
+## Files
 
 ```text
 om-properties/
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   ├── videos/
-│   ├── icons/
-│   └── fonts/
+├── index.html    # Page structure, SEO metadata, sections and modals
+├── style.css     # Responsive visual system, layout, animations and safety fallbacks
+├── script.js     # Property data, rendering, search, favorites, comparison and forms
+├── robots.txt    # Crawler allow rule
+├── sitemap.xml   # Sitemap-ready route anchors
 ├── README.md
 └── favicon.ico
 ```
 
-## Technologies Used
+## Run locally
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Google Fonts
-- Unsplash remote images
-
-## Installation Instructions
-
-No installation is required.
-
-1. Download or clone the project.
-2. Keep the folder structure unchanged.
-3. Open `index.html` in a modern browser.
-
-## How to Run the Project
-
-Double-click `index.html`, or serve the folder with any simple static server if desired:
+Open `index.html` directly, or serve the folder with a static server:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://127.0.0.1:4173/`.
 
-## Customization Guide
+## Customization
 
-- Update website content in `index.html`.
-- Update colors, spacing, responsive rules, animations, and typography variables in `style.css` under the `:root` section.
-- Update property data, service cards, testimonials, images, and interactive behavior in `script.js`.
-- Add local media files to:
-  - `assets/images`
-  - `assets/videos`
-  - `assets/icons`
-  - `assets/fonts`
-- If local images are added, replace the image URLs in `script.js` with paths such as `assets/images/property-1.jpg`.
+- Update page sections and contact details in `index.html`.
+- Update listings, services, testimonials, insights and FAQ content in `script.js`.
+- Update colors, spacing, breakpoints and visual treatments in `style.css`.
+- Replace remote Unsplash URLs with optimized local assets when final property photography is available.
 
-## Future Improvements
+## Production notes
 
-- Add backend form submission
-- Add real WhatsApp/CRM integration
-- Add local optimized image assets
-- Add map section with custom location markers
-- Add dedicated property detail pages if the project grows
-- Add accessibility testing with keyboard and screen-reader audits
-
-## License
-
-This project is provided for Om Properties. Update this section with your preferred license before public distribution.
+This is still a static front-end. Before launch, connect forms to a backend or CRM, replace mock listings with verified inventory, add real analytics, and host optimized local media assets for predictable performance.
